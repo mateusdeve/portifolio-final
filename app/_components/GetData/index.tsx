@@ -34,7 +34,7 @@ function GetData({
         await axios.post("/api/trackPageView", data);
         console.log("Page view data sent via API route successfully");
         toast({
-          title: "Scheduled: Catch up",
+          title: "success",
           description: "Friday, February 10, 2023 at 5:57 PM",
 
           variant: "default",
@@ -42,9 +42,8 @@ function GetData({
       } catch (error) {
         console.error("Error sending page view data via API route:", error);
         toast({
-          title: "Scheduled: Catch up",
+          title: "error",
           description: "Friday, February 10, 2023 at 5:57 PM",
-
           variant: "destructive",
         });
       }

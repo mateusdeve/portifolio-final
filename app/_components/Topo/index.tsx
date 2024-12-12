@@ -32,17 +32,16 @@ function Topo() {
           <span className="text-[#FF348D]">desenvolvimento personalizado</span>{" "}
           para <br /> o seu negócio.
         </h2>
-        <a href="#patrocinar">
-          <Button className=" mt-10 bg-[#FF348D] text-[#fff] hover:bg-[#FF348D] max-w-[26.0625rem] w-full shadow-[0px_20px_40px_-16px_#E50065]  rounded-[0.5rem] px-[2rem] h-[3.5rem] text-[1.125rem] font-semibold flex items-center gap-[2rem]">
-            Peça seu orçamento agora
-            <div className="">
-              <ArrowRight />
-            </div>
-          </Button>
-        </a>
-        {/* <div className="w-full flex lg:justify-start justify-center">
-          <Form position="start" />
-        </div> */}
+        <div className="px-4 lg:px-0">
+          <a href="https://wa.link/d57b9g" target="_blank">
+            <Button className=" mt-10 bg-[#FF348D] text-[#fff] hover:bg-[#FF348D] max-w-[26.0625rem] w-full shadow-[0px_20px_40px_-16px_#E50065]  rounded-[0.5rem] px-[2rem] h-[3.5rem] text-[1.125rem] font-semibold flex items-center gap-[2rem]">
+              Peça seu orçamento agora
+              <div className="">
+                <ArrowRight />
+              </div>
+            </Button>
+          </a>
+        </div>
       </div>
 
       <div className="">

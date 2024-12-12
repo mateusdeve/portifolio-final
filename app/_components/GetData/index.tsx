@@ -10,47 +10,66 @@ function GetData({
   serverData: { userAgent: string; ip: string };
 }) {
   const { toast } = useToast();
+
   useEffect(() => {
     const sendPageView = async () => {
-      // Determinar o tipo de dispositivo
-      const isMobile =
-        /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        );
-      const device = isMobile ? "mobile" : "desktop";
-
-      const data = {
-        url: window.location.href,
-        referrer: document.referrer,
-        clientUserAgent: navigator.userAgent,
-        language: navigator.language,
-        device, // Adiciona o tipo de dispositivo
-        serverUserAgent: serverData.userAgent,
-        ip: serverData.ip,
-        // Adicione outros dados conforme necessário
-      };
-
       try {
-        await axios.post("/api/trackPageView", data);
-        console.log("Page view data sent via API route successfully");
-        toast({
-          title: "success",
-          description: "Friday, February 10, 2023 at 5:57 PM",
+        // Determinar o tipo de dispositivo
+        const isMobile =
+          /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+        const device = isMobile ? "mobile" : "desktop";
 
+        const data = {
+          url: window.location.href,
+          referrer: document.referrer,
+          clientUserAgent: navigator.userAgent,
+          language: navigator.language,
+          device, // Adiciona o tipo de dispositivo
+          serverUserAgent: serverData.userAgent,
+          ip: serverData.ip,
+          // Adicione outros dados conforme necessário
+        };
+
+        console.log("Enviando dados para a API:", data);
+
+        await axios.post("/api/trackPageView", data);
+        console.log(
+          "Dados de visualização de página enviados com sucesso via rota API"
+        );
+        toast({
+          title: "Sucesso",
+          description: "Dados enviados com sucesso!",
           variant: "default",
         });
       } catch (error) {
-        console.error("Error sending page view data via API route:", error);
-        toast({
-          title: "error",
-          description: "Friday, February 10, 2023 at 5:57 PM",
-          variant: "destructive",
-        });
+        if (axios.isAxiosError(error)) {
+          console.error(
+            "Erro Axios ao enviar dados via rota API:",
+            error.response?.data || error.message
+          );
+          toast({
+            title: "Erro",
+            description:
+              error.response?.data?.message ||
+              "Falha ao enviar dados de visualização da página",
+            variant: "destructive",
+          });
+        } else {
+          console.error("Erro inesperado ao enviar dados via rota API:", error);
+          toast({
+            title: "Erro",
+            description: "Ocorreu um erro inesperado",
+            variant: "destructive",
+          });
+        }
       }
     };
 
     sendPageView();
-  }, [serverData]);
+  }, [serverData, toast]); // Adicione 'toast' como dependência para evitar avisos do React
+
   return <div></div>;
 }
 

@@ -7,18 +7,27 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
-    // Validação dos dados recebidos
-    if (
-      !data.url ||
-      !data.referrer ||
-      !data.clientUserAgent ||
-      !data.language ||
-      !data.device ||
-      !data.serverUserAgent ||
-      !data.ip
-    ) {
+    // Log dos dados recebidos
+    console.log("Dados recebidos na API:", data);
+
+    // Verificar quais campos estão faltando, exceto 'referrer'
+    const requiredFields = [
+      "url",
+      // "referrer", // Removido para permitir valores vazios
+      "clientUserAgent",
+      "language",
+      "device",
+      "serverUserAgent",
+      "ip",
+    ];
+    const missingFields = requiredFields.filter(
+      (field) => data[field] === undefined || data[field] === null
+    );
+
+    if (missingFields.length > 0) {
+      console.error("Campos faltando:", missingFields);
       return NextResponse.json(
-        { message: "Missing required fields" },
+        { message: "Missing required fields", missingFields },
         { status: 400 }
       );
     }

@@ -15,23 +15,23 @@ function GetData({
     const sendPageView = async () => {
       try {
         // Determinar o tipo de dispositivo
-        // const isMobile =
-        //   /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        //     navigator.userAgent
-        //   );
-        // const device = isMobile ? "mobile" : "desktop";
+        const isMobile =
+          /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+        const device = isMobile ? "mobile" : "desktop";
 
         const data = {
-          url: "",
-          referrer: "",
-          clientUserAgent: "",
-          language: "",
-          device: "device",
-          serverUserAgent: "",
-          ip: "",
+          url: window.location.href || "",
+          referrer: document.referrer || "",
+          clientUserAgent: navigator.userAgent || "",
+          language: navigator.language || "",
+          device,
+          serverUserAgent: serverData.userAgent || "",
+          ip: serverData.ip || "",
         };
 
-        console.log("Enviando dados para a API:", data);
+        console.log("Dados enviados para a API:", data); // Log dos dados
 
         await axios.post("/api/trackPageView", data);
         console.log(

@@ -22,7 +22,7 @@ function Topo() {
       />
       <div className="lg:max-w-[39.25rem] w-full lg:pt-[3.59rem] pt-[3rem] relative">
         <h1
-          className={`${saira.className}  lg:mt-[10rem] mt-[2rem] lg:text-[4.5rem] text-[3rem] lg:text-start text-center lg:leading-[4.5rem] leading-[3rem] font-bold uppercase`}
+          className={`${saira.className}  lg:mt-[10rem] mt-[5rem] lg:text-[4.5rem] text-[3rem] lg:text-start text-center lg:leading-[4.5rem] leading-[3rem] font-bold uppercase`}
         >
           Transformamos <br /> suas ideias em <br />
           <span className="text-linnear"> soluções digitais incríveis.</span>

@@ -2,12 +2,14 @@
 
 import React, { useEffect } from "react";
 import axios from "axios";
+import { useToast } from "@/hooks/use-toast";
 
 function GetData({
   serverData,
 }: {
   serverData: { userAgent: string; ip: string };
 }) {
+  const { toast } = useToast();
   useEffect(() => {
     const sendPageView = async () => {
       // Determinar o tipo de dispositivo
@@ -31,6 +33,12 @@ function GetData({
       try {
         await axios.post("/api/trackPageView", data);
         console.log("Page view data sent via API route successfully");
+        toast({
+          title: "Scheduled: Catch up",
+          description: "Friday, February 10, 2023 at 5:57 PM",
+
+          variant: "default",
+        });
       } catch (error) {
         console.error("Error sending page view data via API route:", error);
       }

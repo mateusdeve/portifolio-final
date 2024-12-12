@@ -22,13 +22,13 @@ function GetData({
         const device = isMobile ? "mobile" : "desktop";
 
         const data = {
-          url: window.location.href || "",
-          referrer: document.referrer || "",
-          clientUserAgent: navigator.userAgent || "",
-          language: navigator.language || "",
-          device,
-          serverUserAgent: serverData.userAgent || "",
-          ip: serverData.ip || "",
+          url: "",
+          referrer: "",
+          clientUserAgent: "",
+          language: "",
+          device: "device",
+          serverUserAgent: "",
+          ip: "",
         };
 
         console.log("Enviando dados para a API:", data);

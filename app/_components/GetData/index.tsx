@@ -15,11 +15,11 @@ function GetData({
     const sendPageView = async () => {
       try {
         // Determinar o tipo de dispositivo
-        const isMobile =
-          /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-          );
-        const device = isMobile ? "mobile" : "desktop";
+        // const isMobile =
+        //   /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        //     navigator.userAgent
+        //   );
+        // const device = isMobile ? "mobile" : "desktop";
 
         const data = {
           url: "",

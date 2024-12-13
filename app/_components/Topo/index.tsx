@@ -47,9 +47,9 @@ function Topo() {
       <div className="">
         <div className="lg:max-w-[35.4375rem] w-full lg:pt-[10rem] pt-[2rem] lg:pb-[5rem] pb-[2rem] relative  bg-[#290817] h-full lg:px-[4rem] px-[1rem] lg:mt-0 mt-[3rem] ">
           <p
-            className={`${saira.className}  lg:text-[2.4rem] text-[2rem] uppercase font-semibold lg:text-left text-center`}
+            className={`${saira.className}  lg:text-[2.3rem] text-[2rem] uppercase font-semibold lg:text-left text-center`}
           >
-            mpulsionamos sua empresa
+            impulsionamos sua empresa
           </p>
           <div className="mt-[2.25rem]">
             <div className="flex items-start gap-4 ">

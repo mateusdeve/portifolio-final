@@ -4,7 +4,7 @@ import Topo from "./_components/Topo";
 
 const Home = async () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Menu />
       <Topo />
     </div>

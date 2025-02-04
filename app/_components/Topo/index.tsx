@@ -11,7 +11,7 @@ const saira = Saira_Condensed({
 function Topo() {
   return (
     <div className="lg:flex justify-between lg:container  relative" id="top">
-      <div className="absolute top-72 right-32 w-[40rem] h-[19rem] blur-[166.91848754882812px] rounded-[47.96456rem] bg-[#9444FE]"></div>
+      <div className="absolute lg:top-72 lg:right-32 w-[40rem] h-[19rem] blur-[166.91848754882812px] rounded-[47.96456rem] bg-[#9444FE]"></div>
 
       <div className="lg:max-w-[39.25rem] w-full lg:pt-[3.59rem] pt-[3rem] relative">
         <h1

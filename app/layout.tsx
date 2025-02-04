@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devware",
+  title: "Pixel Flow Estudio",
   description: "Transformamos suas ideias em soluções digitais incríveis.",
 };
 

@@ -16,7 +16,7 @@ button:hover {
 }
 
 .text-linnear {
-  background: linear-gradient(272deg, #ffbc0f -2.95%, #ff348d 100%);
+  background: linear-gradient(272deg, #36d1fe -2.95%, #9444fe 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
